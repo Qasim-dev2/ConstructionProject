@@ -39,8 +39,8 @@ const Services = () => {
                 Quality Craftsmanship You Can Trust
               </h2>
               <p className="text-gray-600 leading-relaxed mb-8">
-                At JHR 01 Construction, we believe in delivering excellence in every project. 
-                Our commitment to quality, transparency, and customer satisfaction sets us apart 
+                At RECON Construction, we believe in delivering excellence in every project.
+                Our commitment to quality, transparency, and customer satisfaction sets us apart
                 from the rest.
               </p>
               <div className="space-y-4">

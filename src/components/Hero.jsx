@@ -17,20 +17,20 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
         <p className="text-secondary font-medium text-sm md:text-base tracking-widest uppercase mb-4 animate-fadeInUp">
-          Let's Make It Simple
+          Construction & Maintenance Services
         </p>
         <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 animate-fadeInUp" style={{ animationDelay: '0.2s' }}>
-          JHR 01
+          RECON
           <span className="block text-secondary">Construction</span>
         </h1>
         <p className="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mb-10 animate-fadeInUp" style={{ animationDelay: '0.4s' }}>
-          Building your dreams with precision, quality, and dedication. 
-          Your ideal home is just one step away.
+          Building premium homes with precision, quality, and dedication across
+          Narowal, DHA, Bahria Town, and all over Punjab, Pakistan.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4 animate-fadeInUp" style={{ animationDelay: '0.6s' }}>
           <Link
             to="/services"
-            className="bg-secondary text-white px-8 py-4 rounded-full font-semibold text-sm uppercase tracking-wider hover:bg-red-600 transition-all duration-300 hover:shadow-lg hover:shadow-secondary/30"
+            className="bg-secondary text-primary px-8 py-4 rounded-full font-semibold text-sm uppercase tracking-wider hover:bg-yellow-400 transition-all duration-300 hover:shadow-lg hover:shadow-secondary/30"
           >
             Our Services
           </Link>

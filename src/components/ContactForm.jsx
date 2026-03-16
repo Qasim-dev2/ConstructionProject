@@ -141,7 +141,7 @@ const ContactForm = () => {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full sm:w-auto flex items-center justify-center space-x-2 bg-secondary text-white px-10 py-4 rounded-full font-semibold text-sm uppercase tracking-wider hover:bg-red-600 transition-all duration-300 hover:shadow-lg hover:shadow-secondary/30 disabled:opacity-60 disabled:cursor-not-allowed"
+                className="w-full sm:w-auto flex items-center justify-center space-x-2 bg-secondary text-primary px-10 py-4 rounded-full font-semibold text-sm uppercase tracking-wider hover:bg-yellow-400 transition-all duration-300 hover:shadow-lg hover:shadow-secondary/30 disabled:opacity-60 disabled:cursor-not-allowed"
               >
                 <FaPaperPlane />
                 <span>{loading ? 'Sending...' : 'Send Message'}</span>

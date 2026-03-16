@@ -18,7 +18,7 @@ const Projects = () => {
             Our Projects
           </h1>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-            Explore our portfolio of completed construction projects
+            Explore our portfolio of completed construction projects across Pakistan
           </p>
         </div>
       </section>
@@ -42,21 +42,21 @@ const Projects = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                name: 'Michael Johnson',
-                role: 'Homeowner',
-                text: "JHR 01 Construction transformed our outdated kitchen into a modern masterpiece. The team was professional, punctual, and the quality exceeded our expectations.",
+                name: 'Ahmed Khan',
+                role: 'Homeowner, DHA Lahore',
+                text: "RECON Construction built our 10 Marla home in DHA with outstanding quality. The team was professional, punctual, and the craftsmanship exceeded our expectations. Highly recommended!",
                 rating: 5,
               },
               {
-                name: 'Sarah Williams',
-                role: 'Business Owner',
-                text: "We hired JHR for our office renovation and couldn't be happier. They completed the project on time and within budget. Highly recommended!",
+                name: 'Usman Ali',
+                role: 'Overseas Pakistani, UAE',
+                text: "Being overseas, I was worried about managing construction remotely. RECON kept me updated at every stage and delivered a beautiful turn-key home in Bahria Town on time and within budget.",
                 rating: 5,
               },
               {
-                name: 'David Thompson',
-                role: 'Property Manager',
-                text: "Outstanding work on our bathroom remodel. The attention to detail and craftsmanship is second to none. Will definitely use them again.",
+                name: 'Fatima Rashid',
+                role: 'Property Owner, Narowal',
+                text: "Excellent renovation work on our family home. From plumbing to painting, every detail was handled with care. The quality of materials and workmanship is top-notch.",
                 rating: 5,
               },
             ].map((testimonial, index) => (

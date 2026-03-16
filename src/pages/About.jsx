@@ -19,7 +19,7 @@ const About = () => {
             About Us
           </h1>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-            Learn more about JHR 01 Construction and our commitment to excellence
+            Learn more about RECON Construction and our commitment to excellence
           </p>
         </div>
       </section>
@@ -64,16 +64,16 @@ const About = () => {
                 Who We Are
               </p>
               <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary mb-6 leading-tight">
-                Building Dreams Since Day One
+                Building Trust Across Pakistan Since 2024
               </h2>
               <p className="text-gray-600 leading-relaxed mb-6">
-                Your ideal home can become a reality with JHR 01 Construction. Your wellbeing 
-                and contentment are our top priorities, and we do this by providing customized 
-                design, cost-effective solutions, and meticulous planning.
+                Your dream home can become a reality with RECON Construction. Based in Narowal, Punjab,
+                we serve clients across Pakistan — from DHA and Bahria Town to Citi Housing and beyond.
+                Your satisfaction is our top priority.
               </p>
               <p className="text-gray-600 leading-relaxed mb-8">
-                We take pride in delivering projects on time and within budget, using the latest 
-                technology and sustainable practices. Our team of experienced professionals ensure 
+                We take pride in delivering projects on time and within budget, using the latest
+                technology and sustainable practices. Our team of experienced professionals ensures
                 every detail meets the highest standards of quality.
               </p>
 

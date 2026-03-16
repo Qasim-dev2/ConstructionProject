@@ -32,25 +32,25 @@ const Contact = () => {
               {
                 icon: FaPhoneAlt,
                 title: 'Call Us',
-                info: '+1 (226) 759 7402',
-                link: 'tel:+12267597402',
+                info: '0322-0047310',
+                link: 'tel:+923220047310',
               },
               {
                 icon: FaEnvelope,
                 title: 'Email Us',
-                info: 'info@jhr01construction.ca',
-                link: 'mailto:info@jhr01construction.ca',
+                info: 'info@reconconstruction.pk',
+                link: 'mailto:info@reconconstruction.pk',
               },
               {
                 icon: FaMapMarkerAlt,
                 title: 'Visit Us',
-                info: '1909 Dominion Blvd, Windsor, ON',
+                info: 'Narowal, Punjab, Pakistan',
                 link: '#',
               },
               {
                 icon: FaClock,
                 title: 'Working Hours',
-                info: 'Mon - Sat: 8:00 - 18:00',
+                info: 'Mon - Sat: 8:00 AM - 5:00 PM',
                 link: null,
               },
             ].map((item, index) => (

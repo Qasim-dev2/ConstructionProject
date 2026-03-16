@@ -16,9 +16,9 @@ const AboutSection = () => {
               />
             </div>
             {/* Floating stat card */}
-            <div className="absolute -bottom-6 -right-6 bg-secondary text-white p-6 rounded-2xl shadow-xl hidden md:block">
-              <p className="font-heading text-4xl font-bold">10+</p>
-              <p className="text-sm mt-1">Years Experience</p>
+            <div className="absolute -bottom-6 -right-6 bg-secondary text-primary p-6 rounded-2xl shadow-xl hidden md:block">
+              <p className="font-heading text-4xl font-bold">EST.</p>
+              <p className="text-sm mt-1 font-semibold">Since 2024</p>
             </div>
           </div>
 
@@ -28,12 +28,13 @@ const AboutSection = () => {
               About Us
             </p>
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary mb-6 leading-tight">
-              Let's construct a better tomorrow for future generation.
+              Building Trust & Premium Homes Across Pakistan
             </h2>
             <p className="text-gray-600 leading-relaxed mb-8">
-              Your ideal home can become a reality with JHR 01 Construction. Your wellbeing and 
-              contentment are our top priorities, and we do this by providing customized design, 
-              cost-effective solutions, and meticulous planning. Let's make your dream a reality.
+              Your dream home can become a reality with RECON Construction. Based in Narowal, Punjab,
+              we serve clients across Pakistan including DHA, Bahria Town, and other premium housing
+              societies. Your satisfaction is our top priority — we deliver customized designs,
+              cost-effective solutions, and meticulous planning on every project.
             </p>
 
             {/* Best Practices */}
@@ -44,7 +45,7 @@ const AboutSection = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {[
                   { icon: FaLeaf, text: 'Sustainability' },
-                  { icon: FaClock, text: 'Project On Time' },
+                  { icon: FaClock, text: 'On-Time Delivery' },
                   { icon: FaMicrochip, text: 'Modern Technology' },
                   { icon: FaPencilRuler, text: 'Latest Designs' },
                 ].map((item, index) => (
@@ -65,7 +66,7 @@ const AboutSection = () => {
 
             <Link
               to="/contact"
-              className="inline-block bg-secondary text-white px-8 py-3 rounded-full font-semibold text-sm uppercase tracking-wider hover:bg-red-600 transition-all duration-300"
+              className="inline-block bg-secondary text-primary px-8 py-3 rounded-full font-semibold text-sm uppercase tracking-wider hover:bg-yellow-400 transition-all duration-300"
             >
               Get In Touch
             </Link>

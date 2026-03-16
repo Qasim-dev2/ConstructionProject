@@ -34,14 +34,12 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-secondary rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg font-heading">JHR</span>
-            </div>
-            <div>
-              <h1 className="text-white font-heading font-bold text-lg leading-tight">JHR 01</h1>
-              <p className="text-gray-300 text-xs -mt-1">Construction</p>
-            </div>
+          <Link to="/" className="flex items-center">
+            <img
+              src="/logo.png"
+              alt="RECON Construction"
+              className="h-12 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -51,8 +49,8 @@ const Navbar = () => {
                 key={link.name}
                 to={link.path}
                 className={`text-sm font-medium transition-colors duration-300 hover:text-secondary ${
-                  location.pathname === link.path 
-                    ? 'text-secondary' 
+                  location.pathname === link.path
+                    ? 'text-secondary'
                     : 'text-white'
                 }`}
               >
@@ -61,7 +59,7 @@ const Navbar = () => {
             ))}
             <Link
               to="/contact"
-              className="bg-secondary text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-red-600 transition-colors duration-300"
+              className="bg-secondary text-primary px-6 py-2 rounded-full text-sm font-semibold hover:bg-yellow-400 transition-colors duration-300"
             >
               Get Quote
             </Link>
@@ -95,7 +93,7 @@ const Navbar = () => {
               ))}
               <Link
                 to="/contact"
-                className="bg-secondary text-white px-6 py-2 rounded-full text-sm font-semibold text-center hover:bg-red-600 transition-colors"
+                className="bg-secondary text-primary px-6 py-2 rounded-full text-sm font-semibold text-center hover:bg-yellow-400 transition-colors"
               >
                 Get Quote
               </Link>

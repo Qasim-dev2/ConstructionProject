@@ -5,37 +5,37 @@ const services = [
   {
     icon: FaWrench,
     title: 'Plumbing',
-    description: 'Our expert plumbing services ensure a leak-free and smoothly functioning home, addressing all your plumbing needs with precision and care.',
+    description: 'Expert plumbing services ensuring leak-free and smoothly functioning homes. We handle all plumbing needs with precision across Narowal and Punjab.',
     image: 'https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=600&q=80',
   },
   {
     icon: FaHammer,
     title: 'Framing',
-    description: 'Expert framing services lay the foundation for your dream space, ensuring structural integrity and design cohesion in every corner of your home.',
+    description: 'Professional framing services that lay a strong foundation for your dream home — ensuring structural integrity from grey structure to completion.',
     image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80',
   },
   {
     icon: FaPaintRoller,
     title: 'Painting',
-    description: 'Transform your space with our professional painting services, bringing vibrant colors and a fresh new look to any room.',
+    description: 'Transform your space with our professional painting services, bringing vibrant colors and premium finishes to homes across Pakistan.',
     image: 'https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=600&q=80',
   },
   {
     icon: FaLayerGroup,
     title: 'Flooring',
-    description: 'Elevate your space with our elegant flooring services. From hardwood to tile, we bring beauty and durability underfoot.',
+    description: 'Elevate your space with elegant flooring solutions — from marble and tiles to hardwood, we bring beauty and durability underfoot.',
     image: 'https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?w=600&q=80',
   },
   {
     icon: FaHome,
     title: 'Home Renovation',
-    description: 'From flooring and framing to stunning bathroom makeovers and basement renovations, we\'re your one-stop solution for creating the home of your dreams.',
+    description: 'Complete home renovation services — from grey structure to turn-key finish. Your one-stop solution for creating the home of your dreams.',
     image: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600&q=80',
   },
   {
     icon: FaBath,
     title: 'Bathroom Makeover',
-    description: 'Experience a complete bathroom transformation with our expert makeover services. From modern fixtures to stunning tile work.',
+    description: 'Experience a complete bathroom transformation with expert makeover services. Modern fixtures, stunning tile work, and premium finishes.',
     image: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&q=80',
   },
 ]
@@ -75,7 +75,7 @@ const ServicesSection = ({ limit, showHeader = true }) => {
               {/* Content */}
               <div className="p-6">
                 <div className="w-14 h-14 bg-secondary/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-secondary transition-colors duration-300">
-                  <service.icon className="text-secondary group-hover:text-white transition-colors duration-300" size={24} />
+                  <service.icon className="text-secondary group-hover:text-primary transition-colors duration-300" size={24} />
                 </div>
                 <h3 className="font-heading font-semibold text-xl text-primary mb-3">
                   {service.title}
@@ -92,7 +92,7 @@ const ServicesSection = ({ limit, showHeader = true }) => {
           <div className="text-center mt-12">
             <Link
               to="/services"
-              className="inline-block bg-secondary text-white px-8 py-3 rounded-full font-semibold text-sm uppercase tracking-wider hover:bg-red-600 transition-all duration-300"
+              className="inline-block bg-secondary text-primary px-8 py-3 rounded-full font-semibold text-sm uppercase tracking-wider hover:bg-yellow-400 transition-all duration-300"
             >
               View All Services
             </Link>

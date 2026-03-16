@@ -7,15 +7,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#1a1a2e',
-        secondary: '#e94560',
-        accent: '#0f3460',
-        gold: '#f5a623',
-        dark: '#16213e',
+        primary: '#1a1a1a',
+        secondary: '#edbd4c',
+        accent: '#2c2c2c',
+        gold: '#edbd4c',
+        dark: '#111111',
         light: '#f8f9fa',
       },
       fontFamily: {
-        heading: ['Poppins', 'sans-serif'],
+        heading: ['Josefin Sans', 'Poppins', 'sans-serif'],
         body: ['Open Sans', 'sans-serif'],
       },
     },
