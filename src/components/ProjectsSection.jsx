@@ -2,11 +2,15 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FaArrowRight, FaStar, FaImage } from 'react-icons/fa'
 import { supabase } from '../lib/supabase'
+import ProjectModal from './ProjectModal'
 
 const FALLBACK_IMAGE = 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=600&q=80'
 
-const ProjectCard = ({ project }) => (
-  <div className="project-card relative rounded-2xl overflow-hidden shadow-md group cursor-pointer">
+const ProjectCard = ({ project, onClick }) => (
+  <div
+    className="project-card relative rounded-2xl overflow-hidden shadow-md group cursor-pointer"
+    onClick={() => onClick(project)}
+  >
     <img
       src={project.main_image_url || FALLBACK_IMAGE}
       alt={project.title}
@@ -51,6 +55,8 @@ const SkeletonCard = () => (
 const ProjectsSection = ({ limit, showHeader = true }) => {
   const [projects, setProjects] = useState([])
   const [loading, setLoading] = useState(true)
+  const [selectedProject, setSelectedProject] = useState(null)
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   useEffect(() => {
     const fetchProjects = async () => {
@@ -63,6 +69,16 @@ const ProjectsSection = ({ limit, showHeader = true }) => {
     }
     fetchProjects()
   }, [])
+
+  const handleProjectClick = (project) => {
+    setSelectedProject(project)
+    setIsModalOpen(true)
+  }
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false)
+    setSelectedProject(null)
+  }
 
   const featured = projects.filter(p => p.project_type === 'featured')
   const regular = projects.filter(p => p.project_type === 'regular')
@@ -97,7 +113,7 @@ const ProjectsSection = ({ limit, showHeader = true }) => {
                   <p>No projects added yet. Check back soon.</p>
                 </div>
               )
-              : homepageProjects.map(p => <ProjectCard key={p.id} project={p} />)
+              : homepageProjects.map(p => <ProjectCard key={p.id} project={p} onClick={handleProjectClick} />)
             }
           </div>
 
@@ -111,6 +127,13 @@ const ProjectsSection = ({ limit, showHeader = true }) => {
             </Link>
           </div>
         </div>
+
+        {/* Project Modal */}
+        <ProjectModal
+          project={selectedProject}
+          isOpen={isModalOpen}
+          onClose={handleCloseModal}
+        />
       </section>
     )
   }
@@ -151,7 +174,7 @@ const ProjectsSection = ({ limit, showHeader = true }) => {
                   <div className="w-20 h-1 bg-secondary mx-auto rounded-full"></div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {featured.map(p => <ProjectCard key={p.id} project={p} />)}
+                  {featured.map(p => <ProjectCard key={p.id} project={p} onClick={handleProjectClick} />)}
                 </div>
               </div>
             )}
@@ -169,7 +192,7 @@ const ProjectsSection = ({ limit, showHeader = true }) => {
                   <div className="w-20 h-1 bg-secondary mx-auto rounded-full"></div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {regular.map(p => <ProjectCard key={p.id} project={p} />)}
+                  {regular.map(p => <ProjectCard key={p.id} project={p} onClick={handleProjectClick} />)}
                 </div>
               </div>
             )}
@@ -179,6 +202,13 @@ const ProjectsSection = ({ limit, showHeader = true }) => {
           </>
         )}
       </div>
+
+      {/* Project Modal */}
+      <ProjectModal
+        project={selectedProject}
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+      />
     </section>
   )
 }
