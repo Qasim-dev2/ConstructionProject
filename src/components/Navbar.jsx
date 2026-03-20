@@ -34,19 +34,21 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3 group">
-            <img
-              src="/logo-new.png"
-              alt="RECON Construction"
-              className={`transition-all duration-300 ${
-                scrolled ? 'h-14' : 'h-16'
-              } w-auto drop-shadow-lg`}
-            />
-            <div className="hidden lg:flex flex-col justify-center">
-              <span className="text-white font-heading font-bold text-xl tracking-tight leading-none group-hover:text-secondary transition-colors">
+          <Link to="/" className="flex items-center space-x-2 group">
+            <div className={`overflow-hidden transition-all duration-300 ${
+              scrolled ? 'w-12 h-12' : 'w-14 h-14'
+            }`}>
+              <img
+                src="/logo-new.png"
+                alt="RECON Construction"
+                className="w-full h-full object-contain drop-shadow-lg"
+              />
+            </div>
+            <div className="flex flex-col justify-center">
+              <span className="text-white font-heading font-bold text-lg md:text-xl tracking-tight leading-none group-hover:text-secondary transition-colors">
                 RECON
               </span>
-              <span className="text-secondary text-[10px] font-semibold tracking-widest uppercase">
+              <span className="text-secondary text-[9px] md:text-[10px] font-semibold tracking-widest uppercase">
                 Est. 2021
               </span>
             </div>

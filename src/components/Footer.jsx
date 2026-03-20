@@ -10,11 +10,13 @@ const Footer = () => {
           {/* Company Info */}
           <div>
             <div className="mb-6">
-              <img
-                src="/logo-new.png"
-                alt="RECON Construction"
-                className="h-16 w-auto mb-2"
-              />
+              <div className="w-16 h-16 mb-2">
+                <img
+                  src="/logo-new.png"
+                  alt="RECON Construction"
+                  className="w-full h-full object-contain"
+                />
+              </div>
               <p className="text-secondary text-xs font-semibold tracking-widest uppercase">
                 Established 2021
               </p>
