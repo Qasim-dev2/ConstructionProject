@@ -34,12 +34,22 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <Link to="/" className="flex items-center">
+          <Link to="/" className="flex items-center space-x-3 group">
             <img
-              src="/logo.png"
+              src="/logo-new.png"
               alt="RECON Construction"
-              className="h-12 w-auto"
+              className={`transition-all duration-300 ${
+                scrolled ? 'h-14' : 'h-16'
+              } w-auto drop-shadow-lg`}
             />
+            <div className="hidden lg:flex flex-col justify-center">
+              <span className="text-white font-heading font-bold text-xl tracking-tight leading-none group-hover:text-secondary transition-colors">
+                RECON
+              </span>
+              <span className="text-secondary text-[10px] font-semibold tracking-widest uppercase">
+                Est. 2021
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}

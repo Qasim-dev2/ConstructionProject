@@ -1,7 +1,11 @@
+import { usePageMeta } from '../hooks/usePageMeta'
+import { seoData } from '../constants/seoData'
 import ProjectsSection from '../components/ProjectsSection'
 import CTABanner from '../components/CTABanner'
 
 const Projects = () => {
+  usePageMeta(seoData.projects)
+
   return (
     <div>
       {/* Page Header */}

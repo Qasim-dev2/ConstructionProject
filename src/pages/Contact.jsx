@@ -1,8 +1,12 @@
+import { usePageMeta } from '../hooks/usePageMeta'
+import { seoData } from '../constants/seoData'
 import ContactForm from '../components/ContactForm'
 import OfficeSection from '../components/OfficeSection'
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaClock } from 'react-icons/fa'
 
 const Contact = () => {
+  usePageMeta(seoData.contact)
+
   return (
     <div>
       {/* Page Header */}

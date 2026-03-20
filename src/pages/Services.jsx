@@ -1,8 +1,12 @@
+import { usePageMeta } from '../hooks/usePageMeta'
+import { seoData } from '../constants/seoData'
 import ServicesSection from '../components/ServicesSection'
 import CTABanner from '../components/CTABanner'
 import { FaCheckCircle } from 'react-icons/fa'
 
 const Services = () => {
+  usePageMeta(seoData.services)
+
   return (
     <div>
       {/* Page Header */}

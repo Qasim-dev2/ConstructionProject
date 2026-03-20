@@ -1,8 +1,12 @@
 import { FaLeaf, FaClock, FaMicrochip, FaPencilRuler, FaCheckCircle } from 'react-icons/fa'
+import { usePageMeta } from '../hooks/usePageMeta'
+import { seoData } from '../constants/seoData'
 import StatsSection from '../components/StatsSection'
 import CTABanner from '../components/CTABanner'
 
 const About = () => {
+  usePageMeta(seoData.about)
+
   return (
     <div>
       {/* Page Header */}
@@ -64,7 +68,7 @@ const About = () => {
                 Who We Are
               </p>
               <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary mb-6 leading-tight">
-                Building Trust Across Pakistan Since 2024
+                Building Trust Across Pakistan Since 2021
               </h2>
               <p className="text-gray-600 leading-relaxed mb-6">
                 Your dream home can become a reality with RECON Construction. Based in Narowal, Punjab,

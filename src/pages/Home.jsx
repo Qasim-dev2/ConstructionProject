@@ -1,3 +1,5 @@
+import { usePageMeta } from '../hooks/usePageMeta'
+import { seoData } from '../constants/seoData'
 import Hero from '../components/Hero'
 import ServicesSection from '../components/ServicesSection'
 import AboutSection from '../components/AboutSection'
@@ -8,6 +10,8 @@ import OfficeSection from '../components/OfficeSection'
 import ContactForm from '../components/ContactForm'
 
 const Home = () => {
+  usePageMeta(seoData.home)
+
   return (
     <div>
       <Hero />

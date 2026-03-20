@@ -11,10 +11,13 @@ const Footer = () => {
           <div>
             <div className="mb-6">
               <img
-                src="/logo.png"
+                src="/logo-new.png"
                 alt="RECON Construction"
-                className="h-14 w-auto"
+                className="h-16 w-auto mb-2"
               />
+              <p className="text-secondary text-xs font-semibold tracking-widest uppercase">
+                Established 2021
+              </p>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
               Your dream home can become a reality with RECON Construction. Based in Narowal, Punjab,
