@@ -30,28 +30,30 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
       onClick={onClose}
     >
       <div
-        className="bg-white rounded-2xl max-w-5xl w-full max-h-[90vh] overflow-y-auto shadow-2xl"
+        className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-10 bg-white/90 hover:bg-white text-primary p-2 rounded-full shadow-lg transition-all duration-300"
+          className="absolute top-4 right-4 z-20 bg-white hover:bg-gray-100 text-primary p-3 rounded-full shadow-lg transition-all duration-300"
           aria-label="Close modal"
         >
           <FaTimes size={20} />
         </button>
 
         {/* Image Slider */}
-        <ImageSlider
-          images={allImages}
-          autoPlayInterval={4000}
-          className="w-full h-96"
-        />
+        <div className="bg-gray-900 rounded-t-2xl">
+          <ImageSlider
+            images={allImages}
+            autoPlayInterval={4000}
+            className="w-full"
+          />
+        </div>
 
         {/* Project Details */}
         <div className="p-8">

@@ -42,17 +42,17 @@ const ImageSlider = ({ images, autoPlayInterval = 3000, className = '' }) => {
   return (
     <div className={`relative group ${className}`}>
       {/* Main Image Display */}
-      <div className="relative overflow-hidden rounded-lg">
+      <div className="relative overflow-hidden rounded-lg bg-gray-100">
         <div
           className="flex transition-transform duration-700 ease-in-out"
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
           {images.map((image, index) => (
-            <div key={index} className="min-w-full">
+            <div key={index} className="min-w-full flex items-center justify-center" style={{ minHeight: '400px', maxHeight: '500px' }}>
               <img
                 src={image}
                 alt={`Slide ${index + 1}`}
-                className="w-full h-full object-cover"
+                className="max-w-full max-h-[500px] w-auto h-auto object-contain mx-auto"
                 loading="lazy"
               />
             </div>
