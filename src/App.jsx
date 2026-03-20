@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, Navigate, Outlet } from 'react-router-dom'
 import { AuthProvider } from './context/AuthContext'
-import TopBar from './components/TopBar'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import WhatsAppButton from './components/WhatsAppButton'
@@ -16,7 +15,6 @@ import AdminProjects from './pages/admin/AdminProjects'
 
 const PublicLayout = () => (
   <div className="flex flex-col min-h-screen">
-    <TopBar />
     <Navbar />
     <main className="flex-grow">
       <Outlet />
