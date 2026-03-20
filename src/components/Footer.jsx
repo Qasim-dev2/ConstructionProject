@@ -33,7 +33,7 @@ const Footer = () => {
           <div>
             <h4 className="font-heading font-semibold text-lg mb-6">Our Services</h4>
             <ul className="space-y-3">
-              {['Plumbing', 'Framing', 'Painting', 'Flooring', 'Home Renovation', 'Bathroom Makeover'].map(
+              {['Complete Home Construction', 'Iron Concrete Designing', 'Plumbing', 'Painting', 'Flooring', 'Home Renovation'].map(
                 (service) => (
                   <li key={service}>
                     <Link

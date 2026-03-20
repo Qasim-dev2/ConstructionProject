@@ -19,9 +19,12 @@ const Services = () => {
         ></div>
         <div className="absolute inset-0 hero-overlay"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="font-heading text-4xl md:text-5xl font-bold text-white mb-4">
+          <h1 className="font-heading text-4xl md:text-5xl font-bold text-white mb-2">
             Our Services
           </h1>
+          <p className="text-secondary text-2xl font-bold mb-4" style={{ fontFamily: 'Noto Nastaliq Urdu, serif', direction: 'rtl' }}>
+            ہماری خدمات
+          </p>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto">
             Professional construction services tailored to your needs
           </p>
@@ -37,28 +40,36 @@ const Services = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <p className="text-secondary font-medium text-sm tracking-widest uppercase mb-3">
-                Why Choose Us
+                Why Choose Us | ہمیں کیوں منتخب کریں
               </p>
-              <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary mb-6 leading-tight">
+              <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary mb-2 leading-tight">
                 Quality Craftsmanship You Can Trust
               </h2>
+              <p className="text-secondary text-xl font-semibold mb-4" style={{ fontFamily: 'Noto Nastaliq Urdu, serif', direction: 'rtl' }}>
+                معیاری کاریگری جس پر آپ بھروسہ کر سکتے ہیں
+              </p>
               <p className="text-gray-600 leading-relaxed mb-8">
                 At RECON Construction, we believe in delivering excellence in every project.
                 Our commitment to quality, transparency, and customer satisfaction sets us apart
-                from the rest.
+                from the rest. Serving across Narowal, Lahore, DHA, Bahria Town and all of Punjab.
               </p>
               <div className="space-y-4">
                 {[
-                  'Free Consultation & Estimates',
-                  'Licensed & Insured Team',
-                  'Premium Quality Materials',
-                  'Transparent Pricing',
-                  '100% Satisfaction Guarantee',
-                  'Post-Project Support',
+                  { en: 'Free Consultation & Estimates', ur: 'مفت مشاورت اور تخمینہ' },
+                  { en: 'Experienced & Skilled Team', ur: 'تجربہ کار اور ماہر ٹیم' },
+                  { en: 'Premium Quality Materials', ur: 'اعلیٰ معیار کا مواد' },
+                  { en: 'Transparent Pricing', ur: 'شفاف قیمتیں' },
+                  { en: '100% Satisfaction Guarantee', ur: '100٪ اطمینان کی ضمانت' },
+                  { en: 'Post-Project Support', ur: 'منصوبے کے بعد سپورٹ' },
                 ].map((item, index) => (
-                  <div key={index} className="flex items-center space-x-3">
-                    <FaCheckCircle className="text-secondary flex-shrink-0" />
-                    <span className="text-gray-700 font-medium">{item}</span>
+                  <div key={index} className="flex items-start space-x-3">
+                    <FaCheckCircle className="text-secondary flex-shrink-0 mt-1" />
+                    <div className="flex-1">
+                      <span className="text-gray-700 font-medium block">{item.en}</span>
+                      <span className="text-secondary text-sm" style={{ fontFamily: 'Noto Nastaliq Urdu, serif', direction: 'rtl' }}>
+                        {item.ur}
+                      </span>
+                    </div>
                   </div>
                 ))}
               </div>
