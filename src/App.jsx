@@ -12,6 +12,7 @@ import Contact from './pages/Contact'
 import AdminLogin from './pages/admin/AdminLogin'
 import AdminDashboard from './pages/admin/AdminDashboard'
 import AdminProjects from './pages/admin/AdminProjects'
+import AdminQuotes from './pages/admin/AdminQuotes'
 
 const PublicLayout = () => (
   <div className="flex flex-col min-h-screen">
@@ -44,6 +45,7 @@ function App() {
           <Route element={<ProtectedRoute />}>
             <Route path="/admin/dashboard" element={<AdminDashboard />} />
             <Route path="/admin/projects" element={<AdminProjects />} />
+            <Route path="/admin/quotes" element={<AdminQuotes />} />
           </Route>
         </Routes>
       </Router>

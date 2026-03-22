@@ -65,7 +65,9 @@ const AdminDashboard = () => {
           <StatCard icon={FaProjectDiagram} label="Total Projects" value={loading ? '—' : stats.total} color="bg-gray-700" />
           <StatCard icon={FaStar} label="Featured" value={loading ? '—' : stats.featured} color="bg-yellow-500" />
           <StatCard icon={FaList} label="Regular" value={loading ? '—' : stats.regular} color="bg-blue-500" />
-          <StatCard icon={FaEnvelope} label="Contacts" value={loading ? '—' : stats.contacts} color="bg-green-500" />
+          <Link to="/admin/quotes" className="block transition-transform hover:scale-105">
+            <StatCard icon={FaEnvelope} label="Quote Requests" value={loading ? '—' : stats.contacts} color="bg-green-500" />
+          </Link>
         </div>
 
         {/* Quick Actions */}
@@ -83,6 +85,13 @@ const AdminDashboard = () => {
           >
             <FaList size={12} />
             <span>Manage Projects</span>
+          </Link>
+          <Link
+            to="/admin/quotes"
+            className="flex items-center space-x-2 bg-white hover:bg-gray-50 text-gray-700 border border-gray-200 px-5 py-2.5 rounded-xl font-semibold text-sm transition-colors"
+          >
+            <FaEnvelope size={12} />
+            <span>View Quote Requests</span>
           </Link>
         </div>
 

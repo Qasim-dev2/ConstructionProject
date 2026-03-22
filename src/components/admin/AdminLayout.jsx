@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
-import { FaTachometerAlt, FaProjectDiagram, FaBars, FaTimes, FaSignOutAlt } from 'react-icons/fa'
+import { FaTachometerAlt, FaProjectDiagram, FaEnvelope, FaBars, FaTimes, FaSignOutAlt } from 'react-icons/fa'
 import { useAuth } from '../../context/AuthContext'
 
 const AdminLayout = ({ children, title }) => {
@@ -16,6 +16,7 @@ const AdminLayout = ({ children, title }) => {
   const navItems = [
     { to: '/admin/dashboard', icon: FaTachometerAlt, label: 'Dashboard' },
     { to: '/admin/projects', icon: FaProjectDiagram, label: 'Projects' },
+    { to: '/admin/quotes', icon: FaEnvelope, label: 'Quote Requests' },
   ]
 
   const Sidebar = () => (
