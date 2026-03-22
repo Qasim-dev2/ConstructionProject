@@ -14,7 +14,7 @@ const ImageSlider = ({ images, autoPlayInterval = 3000, className = '' }) => {
     }, autoPlayInterval)
 
     return () => clearInterval(interval)
-  }, [currentIndex, isAutoPlaying, images.length, autoPlayInterval])
+  }, [isAutoPlaying, images.length, autoPlayInterval])
 
   const goToPrevious = () => {
     setIsAutoPlaying(false)

@@ -56,7 +56,6 @@ const ProjectsSection = ({ limit, showHeader = true }) => {
   const [projects, setProjects] = useState([])
   const [loading, setLoading] = useState(true)
   const [selectedProject, setSelectedProject] = useState(null)
-  const [isModalOpen, setIsModalOpen] = useState(false)
 
   useEffect(() => {
     const fetchProjects = async () => {
@@ -72,11 +71,9 @@ const ProjectsSection = ({ limit, showHeader = true }) => {
 
   const handleProjectClick = (project) => {
     setSelectedProject(project)
-    setIsModalOpen(true)
   }
 
   const handleCloseModal = () => {
-    setIsModalOpen(false)
     setSelectedProject(null)
   }
 
@@ -89,127 +86,131 @@ const ProjectsSection = ({ limit, showHeader = true }) => {
   if (limit) {
     // Homepage view — simple grid, latest N projects
     return (
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {showHeader && (
-            <div className="text-center mb-16">
-              <p className="text-secondary font-medium text-sm tracking-widest uppercase mb-3">
-                Our Portfolio
-              </p>
-              <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary mb-4">
-                Our Latest Works
-              </h2>
-              <div className="w-20 h-1 bg-secondary mx-auto rounded-full"></div>
+      <>
+        <section className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            {showHeader && (
+              <div className="text-center mb-16">
+                <p className="text-secondary font-medium text-sm tracking-widest uppercase mb-3">
+                  Our Portfolio
+                </p>
+                <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary mb-4">
+                  Our Latest Works
+                </h2>
+                <div className="w-20 h-1 bg-secondary mx-auto rounded-full"></div>
+              </div>
+            )}
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {loading
+                ? Array(limit).fill(0).map((_, i) => <SkeletonCard key={i} />)
+                : homepageProjects.length === 0
+                ? (
+                  <div className="col-span-3 text-center py-16 text-gray-400">
+                    <FaImage className="mx-auto mb-3" size={32} />
+                    <p>No projects added yet. Check back soon.</p>
+                  </div>
+                )
+                : homepageProjects.map(p => <ProjectCard key={p.id} project={p} onClick={handleProjectClick} />)
+              }
             </div>
-          )}
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {loading
-              ? Array(limit).fill(0).map((_, i) => <SkeletonCard key={i} />)
-              : homepageProjects.length === 0
-              ? (
-                <div className="col-span-3 text-center py-16 text-gray-400">
-                  <FaImage className="mx-auto mb-3" size={32} />
-                  <p>No projects added yet. Check back soon.</p>
-                </div>
-              )
-              : homepageProjects.map(p => <ProjectCard key={p.id} project={p} onClick={handleProjectClick} />)
-            }
+            <div className="text-center mt-12">
+              <Link
+                to="/projects"
+                className="inline-flex items-center space-x-2 bg-secondary text-primary px-8 py-3 rounded-full font-semibold text-sm uppercase tracking-wider hover:bg-yellow-400 transition-all duration-300"
+              >
+                <span>View All Projects</span>
+                <FaArrowRight size={12} />
+              </Link>
+            </div>
           </div>
+        </section>
 
-          <div className="text-center mt-12">
-            <Link
-              to="/projects"
-              className="inline-flex items-center space-x-2 bg-secondary text-primary px-8 py-3 rounded-full font-semibold text-sm uppercase tracking-wider hover:bg-yellow-400 transition-all duration-300"
-            >
-              <span>View All Projects</span>
-              <FaArrowRight size={12} />
-            </Link>
-          </div>
-        </div>
-
-        {/* Project Modal */}
+        {/* Project Modal - Single instance */}
         <ProjectModal
           project={selectedProject}
-          isOpen={isModalOpen}
+          isOpen={!!selectedProject}
           onClose={handleCloseModal}
         />
-      </section>
+      </>
     )
   }
 
   // Full projects page view — separate featured and regular
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {loading ? (
-          <>
-            <div className="text-center mb-16">
-              <div className="h-4 bg-gray-200 rounded w-32 mx-auto mb-3 animate-pulse"></div>
-              <div className="h-8 bg-gray-200 rounded w-64 mx-auto animate-pulse"></div>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {Array(6).fill(0).map((_, i) => <SkeletonCard key={i} />)}
-            </div>
-          </>
-        ) : projects.length === 0 ? (
-          <div className="text-center py-24">
-            <FaImage className="text-gray-300 mx-auto mb-4" size={48} />
-            <h3 className="text-gray-500 text-lg font-medium mb-2">No projects yet</h3>
-            <p className="text-gray-400 text-sm">Projects will appear here once added.</p>
-          </div>
-        ) : (
-          <>
-            {/* Featured Projects */}
-            {featured.length > 0 && (
-              <div className="mb-20">
-                <div className="text-center mb-16">
-                  <p className="text-secondary font-medium text-sm tracking-widest uppercase mb-3 flex items-center justify-center space-x-2">
-                    <FaStar size={12} />
-                    <span>Featured Work</span>
-                  </p>
-                  <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary mb-4">
-                    Signature Projects
-                  </h2>
-                  <div className="w-20 h-1 bg-secondary mx-auto rounded-full"></div>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {featured.map(p => <ProjectCard key={p.id} project={p} onClick={handleProjectClick} />)}
-                </div>
+    <>
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {loading ? (
+            <>
+              <div className="text-center mb-16">
+                <div className="h-4 bg-gray-200 rounded w-32 mx-auto mb-3 animate-pulse"></div>
+                <div className="h-8 bg-gray-200 rounded w-64 mx-auto animate-pulse"></div>
               </div>
-            )}
-
-            {/* Regular Projects */}
-            {regular.length > 0 && (
-              <div>
-                <div className="text-center mb-16">
-                  <p className="text-secondary font-medium text-sm tracking-widest uppercase mb-3">
-                    Our Portfolio
-                  </p>
-                  <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary mb-4">
-                    {featured.length > 0 ? 'More Projects' : 'All Projects'}
-                  </h2>
-                  <div className="w-20 h-1 bg-secondary mx-auto rounded-full"></div>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {regular.map(p => <ProjectCard key={p.id} project={p} onClick={handleProjectClick} />)}
-                </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {Array(6).fill(0).map((_, i) => <SkeletonCard key={i} />)}
               </div>
-            )}
+            </>
+          ) : projects.length === 0 ? (
+            <div className="text-center py-24">
+              <FaImage className="text-gray-300 mx-auto mb-4" size={48} />
+              <h3 className="text-gray-500 text-lg font-medium mb-2">No projects yet</h3>
+              <p className="text-gray-400 text-sm">Projects will appear here once added.</p>
+            </div>
+          ) : (
+            <>
+              {/* Featured Projects */}
+              {featured.length > 0 && (
+                <div className="mb-20">
+                  <div className="text-center mb-16">
+                    <p className="text-secondary font-medium text-sm tracking-widest uppercase mb-3 flex items-center justify-center space-x-2">
+                      <FaStar size={12} />
+                      <span>Featured Work</span>
+                    </p>
+                    <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary mb-4">
+                      Signature Projects
+                    </h2>
+                    <div className="w-20 h-1 bg-secondary mx-auto rounded-full"></div>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {featured.map(p => <ProjectCard key={p.id} project={p} onClick={handleProjectClick} />)}
+                  </div>
+                </div>
+              )}
 
-            {/* If only featured, no need for separate header */}
-            {regular.length === 0 && featured.length === 0 && null}
-          </>
-        )}
-      </div>
+              {/* Regular Projects */}
+              {regular.length > 0 && (
+                <div>
+                  <div className="text-center mb-16">
+                    <p className="text-secondary font-medium text-sm tracking-widest uppercase mb-3">
+                      Our Portfolio
+                    </p>
+                    <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary mb-4">
+                      {featured.length > 0 ? 'More Projects' : 'All Projects'}
+                    </h2>
+                    <div className="w-20 h-1 bg-secondary mx-auto rounded-full"></div>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {regular.map(p => <ProjectCard key={p.id} project={p} onClick={handleProjectClick} />)}
+                  </div>
+                </div>
+              )}
 
-      {/* Project Modal */}
+              {/* If only featured, no need for separate header */}
+              {regular.length === 0 && featured.length === 0 && null}
+            </>
+          )}
+        </div>
+      </section>
+
+      {/* Project Modal - Single instance outside conditional */}
       <ProjectModal
         project={selectedProject}
-        isOpen={isModalOpen}
+        isOpen={!!selectedProject}
         onClose={handleCloseModal}
       />
-    </section>
+    </>
   )
 }
 

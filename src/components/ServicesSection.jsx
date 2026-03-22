@@ -74,7 +74,7 @@ const ServicesSection = ({ limit, showHeader = true }) => {
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary mb-2">
               Quality Services
             </h2>
-            <p className="text-secondary text-lg font-semibold mb-4" style={{ fontFamily: 'Noto Nastaliq Urdu, serif', direction: 'rtl' }}>
+            <p className="text-secondary text-lg font-semibold mb-4 urdu-text">
               معیاری خدمات
             </p>
             <div className="w-20 h-1 bg-secondary mx-auto rounded-full"></div>
@@ -103,7 +103,7 @@ const ServicesSection = ({ limit, showHeader = true }) => {
                 <h3 className="font-heading font-semibold text-xl text-primary mb-1">
                   {service.title}
                 </h3>
-                <p className="text-secondary text-xs font-medium mb-3" style={{ fontFamily: 'Noto Nastaliq Urdu, serif', direction: 'rtl' }}>
+                <p className="text-secondary text-xs font-medium mb-3 urdu-text">
                   {service.urduTitle}
                 </p>
                 <p className="text-gray-600 text-sm leading-relaxed">

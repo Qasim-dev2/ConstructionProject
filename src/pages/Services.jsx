@@ -22,7 +22,7 @@ const Services = () => {
           <h1 className="font-heading text-4xl md:text-5xl font-bold text-white mb-2">
             Our Services
           </h1>
-          <p className="text-secondary text-2xl font-bold mb-4" style={{ fontFamily: 'Noto Nastaliq Urdu, serif', direction: 'rtl' }}>
+          <p className="text-secondary text-2xl font-bold mb-4 urdu-text">
             ہماری خدمات
           </p>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto">
@@ -45,7 +45,7 @@ const Services = () => {
               <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary mb-2 leading-tight">
                 Quality Craftsmanship You Can Trust
               </h2>
-              <p className="text-secondary text-xl font-semibold mb-4" style={{ fontFamily: 'Noto Nastaliq Urdu, serif', direction: 'rtl' }}>
+              <p className="text-secondary text-xl font-semibold mb-4 urdu-text">
                 معیاری کاریگری جس پر آپ بھروسہ کر سکتے ہیں
               </p>
               <p className="text-gray-600 leading-relaxed mb-8">
@@ -66,7 +66,7 @@ const Services = () => {
                     <FaCheckCircle className="text-secondary flex-shrink-0 mt-1" />
                     <div className="flex-1">
                       <span className="text-gray-700 font-medium block">{item.en}</span>
-                      <span className="text-secondary text-sm" style={{ fontFamily: 'Noto Nastaliq Urdu, serif', direction: 'rtl' }}>
+                      <span className="text-secondary text-sm urdu-text">
                         {item.ur}
                       </span>
                     </div>

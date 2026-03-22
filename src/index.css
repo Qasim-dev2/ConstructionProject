@@ -119,3 +119,9 @@ h1, h2, h3, h4, h5, h6 {
 .project-card:hover img {
   transform: scale(1.1);
 }
+
+/* Urdu text styling utility */
+.urdu-text {
+  font-family: 'Noto Nastaliq Urdu', serif;
+  direction: rtl;
+}
