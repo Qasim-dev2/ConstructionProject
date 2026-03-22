@@ -2,7 +2,10 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FaProjectDiagram, FaStar, FaList, FaEnvelope, FaPlus, FaClock } from 'react-icons/fa'
 import AdminLayout from '../../components/admin/AdminLayout'
+import TypeBadge from '../../components/admin/TypeBadge'
 import { supabase } from '../../lib/supabase'
+import { formatAdminDate } from '../../utils/dateUtils'
+import { DB_TABLES, PROJECT_TYPES, ADMIN_ROUTES } from '../../constants/database'
 
 const StatCard = ({ icon: Icon, label, value, color }) => (
   <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
@@ -18,16 +21,6 @@ const StatCard = ({ icon: Icon, label, value, color }) => (
   </div>
 )
 
-const TypeBadge = ({ type }) => (
-  <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${
-    type === 'featured'
-      ? 'bg-yellow-100 text-yellow-700'
-      : 'bg-blue-100 text-blue-700'
-  }`}>
-    {type === 'featured' ? 'Featured' : 'Regular'}
-  </span>
-)
-
 const AdminDashboard = () => {
   const [stats, setStats] = useState({ total: 0, featured: 0, regular: 0, contacts: 0 })
   const [recentProjects, setRecentProjects] = useState([])
@@ -35,24 +28,48 @@ const AdminDashboard = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const [{ data: projects }, { count: contacts }] = await Promise.all([
-        supabase.from('projects').select('*'),
-        supabase.from('contacts').select('*', { count: 'exact', head: true }),
-      ])
-      if (projects) {
+      try {
+        // Get project counts by type using server-side aggregation
+        const { data: projectCounts } = await supabase
+          .from(DB_TABLES.PROJECTS)
+          .select('project_type')
+          .then(({ data, error }) => {
+            if (error) throw error
+            const counts = data.reduce((acc, p) => {
+              acc[p.project_type] = (acc[p.project_type] || 0) + 1
+              return acc
+            }, {})
+            return {
+              data: {
+                total: data.length,
+                featured: counts[PROJECT_TYPES.FEATURED] || 0,
+                regular: counts[PROJECT_TYPES.REGULAR] || 0
+              }
+            }
+          })
+
+        // Get recent projects (limit to 5)
+        const { data: recentProjects } = await supabase
+          .from(DB_TABLES.PROJECTS)
+          .select('*')
+          .order('created_at', { ascending: false })
+          .limit(5)
+
+        // Get contacts count
+        const { count: contacts } = await supabase
+          .from(DB_TABLES.CONTACTS)
+          .select('*', { count: 'exact', head: true })
+
         setStats({
-          total: projects.length,
-          featured: projects.filter(p => p.project_type === 'featured').length,
-          regular: projects.filter(p => p.project_type === 'regular').length,
+          ...projectCounts,
           contacts: contacts ?? 0,
         })
-        setRecentProjects(
-          [...projects]
-            .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
-            .slice(0, 5)
-        )
+        setRecentProjects(recentProjects || [])
+      } catch (error) {
+        console.error('Error fetching dashboard data:', error)
+      } finally {
+        setLoading(false)
       }
-      setLoading(false)
     }
     fetchData()
   }, [])
@@ -129,7 +146,7 @@ const AdminDashboard = () => {
                       <td className="px-6 py-4 text-gray-400">
                         <span className="flex items-center space-x-1">
                           <FaClock size={10} />
-                          <span>{new Date(p.created_at).toLocaleDateString()}</span>
+                          <span>{formatAdminDate(p.created_at)}</span>
                         </span>
                       </td>
                     </tr>

@@ -2,17 +2,9 @@ import { useEffect, useState } from 'react'
 import { FaPlus, FaEdit, FaTrash, FaStar, FaList, FaSearch, FaImage } from 'react-icons/fa'
 import AdminLayout from '../../components/admin/AdminLayout'
 import AdminProjectForm from './AdminProjectForm'
+import TypeBadge from '../../components/admin/TypeBadge'
 import { supabase } from '../../lib/supabase'
-
-const TypeBadge = ({ type }) => (
-  <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${
-    type === 'featured'
-      ? 'bg-yellow-100 text-yellow-700'
-      : 'bg-blue-100 text-blue-700'
-  }`}>
-    {type === 'featured' ? 'Featured' : 'Regular'}
-  </span>
-)
+import { formatAdminDate } from '../../utils/dateUtils'
 
 const StatusBadge = ({ status }) => (
   <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${
@@ -204,7 +196,7 @@ const AdminProjects = () => {
                         <td className="px-6 py-4"><StatusBadge status={p.status} /></td>
                         <td className="px-6 py-4 text-gray-500">{p.location || '—'}</td>
                         <td className="px-6 py-4 text-gray-400 text-xs">
-                          {new Date(p.created_at).toLocaleDateString('en-PK')}
+                          {formatAdminDate(p.created_at)}
                         </td>
                         <td className="px-6 py-4">
                           <div className="flex items-center justify-end space-x-2">

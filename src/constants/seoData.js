@@ -10,7 +10,7 @@ export const seoData = {
     keywords: "construction company in narowal, construction company in pakistan, construction company in punjab, home construction narowal, grey structure narowal, bahria town construction, DHA construction lahore, home renovation pakistan, plumbing services narowal, flooring services pakistan, painting services pakistan, turn key construction pakistan, recon construction, reconconstruction",
     url: "https://reconcontruction.me",
     ogTitle: "RECON Construction | Premium Construction Company in Pakistan",
-    ogDescription: "Premium home construction, grey structure, renovation and maintenance services in Narowal, DHA, Bahria Town and across Punjab, Pakistan. Est. 2024.",
+    ogDescription: "Premium home construction, grey structure, renovation and maintenance services in Narowal, DHA, Bahria Town and across Punjab, Pakistan. Est. 2021.",
     ogImage: "https://reconcontruction.me/logo.png",
     ogUrl: "https://reconcontruction.me",
     twitterTitle: "RECON Construction | Premium Construction Company in Pakistan",

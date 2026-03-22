@@ -18,7 +18,7 @@ const AboutSection = () => {
             {/* Floating stat card */}
             <div className="absolute -bottom-6 -right-6 bg-secondary text-primary p-6 rounded-2xl shadow-xl hidden md:block">
               <p className="font-heading text-4xl font-bold">EST.</p>
-              <p className="text-sm mt-1 font-semibold">Since 2024</p>
+              <p className="text-sm mt-1 font-semibold">Since 2021</p>
             </div>
           </div>
 

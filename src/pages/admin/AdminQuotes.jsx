@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 import { FaEnvelope, FaUser, FaPhone, FaTrash, FaClock, FaCheckCircle } from 'react-icons/fa'
 import AdminLayout from '../../components/admin/AdminLayout'
 import { supabase } from '../../lib/supabase'
+import { formatDetailedDate } from '../../utils/dateUtils'
+import { DB_TABLES, DB_COLUMNS } from '../../constants/database'
 
 const AdminQuotes = () => {
   const [quotes, setQuotes] = useState([])
@@ -11,9 +13,9 @@ const AdminQuotes = () => {
   const fetchQuotes = async () => {
     setLoading(true)
     const { data, error } = await supabase
-      .from('contacts')
+      .from(DB_TABLES.CONTACTS)
       .select('*')
-      .order('created_at', { ascending: false })
+      .order(DB_COLUMNS.CONTACTS.CREATED_AT, { ascending: false })
 
     if (error) {
       console.error('Error fetching quotes:', error)
@@ -30,7 +32,7 @@ const AdminQuotes = () => {
   const handleDelete = async (id) => {
     if (!confirm('Are you sure you want to delete this quote request?')) return
 
-    const { error } = await supabase.from('contacts').delete().eq('id', id)
+    const { error } = await supabase.from(DB_TABLES.CONTACTS).delete().eq(DB_COLUMNS.CONTACTS.ID, id)
 
     if (error) {
       console.error('Error deleting quote:', error)
@@ -43,9 +45,9 @@ const AdminQuotes = () => {
 
   const handleMarkRead = async (id, currentStatus) => {
     const { error } = await supabase
-      .from('contacts')
-      .update({ read: !currentStatus })
-      .eq('id', id)
+      .from(DB_TABLES.CONTACTS)
+      .update({ [DB_COLUMNS.CONTACTS.READ]: !currentStatus })
+      .eq(DB_COLUMNS.CONTACTS.ID, id)
 
     if (error) {
       console.error('Error updating quote:', error)
@@ -55,17 +57,6 @@ const AdminQuotes = () => {
         setSelectedQuote({ ...selectedQuote, read: !currentStatus })
       }
     }
-  }
-
-  const formatDate = (dateString) => {
-    const date = new Date(dateString)
-    return date.toLocaleString('en-US', {
-      month: 'short',
-      day: 'numeric',
-      year: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit'
-    })
   }
 
   return (
@@ -112,7 +103,7 @@ const AdminQuotes = () => {
                   </div>
                   <div className="flex items-center text-xs text-gray-400 mt-2">
                     <FaClock size={10} className="mr-1" />
-                    {formatDate(quote.created_at)}
+                    {formatDetailedDate(quote.created_at)}
                   </div>
                 </div>
               ))}
@@ -200,7 +191,7 @@ const AdminQuotes = () => {
                       </div>
                       <div>
                         <p className="text-xs text-gray-500 uppercase font-medium">Submitted</p>
-                        <p className="text-gray-900 font-medium mt-1">{formatDate(selectedQuote.created_at)}</p>
+                        <p className="text-gray-900 font-medium mt-1">{formatDetailedDate(selectedQuote.created_at)}</p>
                       </div>
                     </div>
                   </div>
