@@ -16,14 +16,14 @@ const services = [
     urduTitle: 'حرارت سے بچاؤ',
     description: 'Professional thermal insulation solutions to keep your home comfortable year-round. Energy-efficient insulation for walls, roofs, and foundations.',
     urduDesc: 'پیشہ ورانہ ہیٹ انسولیشن - سال بھر آرام دہ گھر',
-    image: 'https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=600&q=80',
+    image: '/thermal-insulating.png',
   },
   {
     icon: FaRuler,
-    title: 'House Drawing & Construction Estimation',
-    urduTitle: 'گھر کا نقشہ اور تخمینہ',
-    description: 'Professional architectural drawings and accurate cost estimation. Complete house plans with detailed material and labor cost breakdown.',
-    urduDesc: 'پیشہ ورانہ آرکیٹیکچرل ڈرائنگ اور درست قیمت کا تخمینہ',
+    title: 'Cad Drawing',
+    urduTitle: 'کیڈ ڈرائنگ',
+    description: 'Professional CAD drawing services for architectural and construction projects. Detailed technical drawings with precise measurements and specifications.',
+    urduDesc: 'پیشہ ورانہ کیڈ ڈرائنگ - تعمیراتی منصوبوں کے لیے تکنیکی ڈرائنگ',
     image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80',
   },
   {
@@ -32,7 +32,7 @@ const services = [
     urduTitle: 'باؤنڈری وال اور کار پورچ',
     description: 'Strong boundary walls and elegant car porches/driveways. Secure your property with durable construction and attractive entrance designs.',
     urduDesc: 'مضبوط باؤنڈری دیوار اور خوبصورت کار پورچ - محفوظ اور پرکشش',
-    image: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=600&q=80',
+    image: '/wall.png',
   },
   {
     icon: FaPaintRoller,
@@ -40,7 +40,7 @@ const services = [
     urduTitle: 'پینٹ کے ساتھ چھت (پی او پی/جپسم)',
     description: 'Beautiful ceiling work with POP/Gypsum finishing and premium paint. Transform your interiors with elegant false ceiling designs.',
     urduDesc: 'پی او پی/جپسم کے ساتھ خوبصورت چھت کا کام اور پریمیم پینٹ',
-    image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=80',
+    image: '/paint-ceiling-new.png',
   },
   {
     icon: FaWater,
