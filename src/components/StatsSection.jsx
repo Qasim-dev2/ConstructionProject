@@ -2,10 +2,10 @@ import { FaHardHat, FaAward, FaUsers, FaProjectDiagram } from 'react-icons/fa'
 import { useState, useEffect, useRef } from 'react'
 
 const stats = [
-  { icon: FaHardHat, number: 150, suffix: '+', label: 'Projects Completed' },
-  { icon: FaAward, number: 10, suffix: '+', label: 'Years Experience' },
-  { icon: FaUsers, number: 200, suffix: '+', label: 'Happy Clients' },
-  { icon: FaProjectDiagram, number: 50, suffix: '+', label: 'Active Projects' },
+  { icon: FaHardHat, number: 125, suffix: '+', label: 'Projects Completed' },
+  { icon: FaAward, number: 5, suffix: '+', label: 'Years Experience' },
+  { icon: FaUsers, number: 125, suffix: '+', label: 'Happy Clients' },
+  { icon: FaProjectDiagram, number: 10, suffix: '+', label: 'Active Projects' },
 ]
 
 const CounterAnimation = ({ target, suffix }) => {
