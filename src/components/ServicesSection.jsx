@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { FaBolt, FaThermometerHalf, FaRuler, FaRoad, FaPaintRoller, FaTint } from 'react-icons/fa'
+import { FaBolt, FaThermometerHalf, FaRuler, FaRoad, FaPaintRoller, FaWater } from 'react-icons/fa'
 
 const services = [
   {
@@ -16,7 +16,7 @@ const services = [
     urduTitle: 'حرارت سے بچاؤ',
     description: 'Professional thermal insulation solutions to keep your home comfortable year-round. Energy-efficient insulation for walls, roofs, and foundations.',
     urduDesc: 'پیشہ ورانہ ہیٹ انسولیشن - سال بھر آرام دہ گھر',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=600&q=80',
   },
   {
     icon: FaRuler,
@@ -24,7 +24,7 @@ const services = [
     urduTitle: 'گھر کا نقشہ اور تخمینہ',
     description: 'Professional architectural drawings and accurate cost estimation. Complete house plans with detailed material and labor cost breakdown.',
     urduDesc: 'پیشہ ورانہ آرکیٹیکچرل ڈرائنگ اور درست قیمت کا تخمینہ',
-    image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80',
   },
   {
     icon: FaRoad,
@@ -43,12 +43,12 @@ const services = [
     image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=80',
   },
   {
-    icon: FaTint,
+    icon: FaWater,
     title: 'Sewerage & Drainage System',
     urduTitle: 'نکاسی آب کا نظام',
     description: 'Professional sewerage and drainage system installation. Proper waste management and water drainage solutions for healthy living.',
     urduDesc: 'پیشہ ورانہ نکاسی آب کا نظام - صحت مند زندگی کے لیے',
-    image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=600&q=80',
   },
 ]
 
