@@ -20,10 +20,10 @@ const services = [
   },
   {
     icon: FaRuler,
-    title: 'Cad Drawing',
-    urduTitle: 'کیڈ ڈرائنگ',
-    description: 'Professional CAD drawing services for architectural and construction projects. Detailed technical drawings with precise measurements and specifications.',
-    urduDesc: 'پیشہ ورانہ کیڈ ڈرائنگ - تعمیراتی منصوبوں کے لیے تکنیکی ڈرائنگ',
+    title: 'Cad Drawing & Construction Estimation',
+    urduTitle: 'کیڈ ڈرائنگ اور تخمینہ',
+    description: 'Professional CAD drawing services and accurate construction cost estimation. Detailed technical drawings with precise measurements and comprehensive project budgeting.',
+    urduDesc: 'پیشہ ورانہ کیڈ ڈرائنگ اور درست تخمینہ - تعمیراتی منصوبوں کے لیے',
     image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80',
   },
   {
