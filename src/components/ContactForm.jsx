@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { FaUser, FaEnvelope, FaPhone, FaPaperPlane } from 'react-icons/fa'
 import { supabase } from '../lib/supabase'
+import emailjs from '@emailjs/browser'
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -22,24 +23,45 @@ const ContactForm = () => {
     setLoading(true)
     setError(null)
 
-    const { error: supabaseError } = await supabase.from('contacts').insert([{
-      name: formData.name,
-      email: formData.email,
-      phone: formData.phone,
-      message: formData.message,
-    }])
+    try {
+      // Send email via EmailJS
+      await emailjs.send(
+        'service_432qedq',      // Your Service ID
+        'template_0tgepae',     // Your Template ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          from_phone: formData.phone || 'Not provided',
+          message: formData.message,
+        },
+        'f9ErDzMnEKAjRsejA'      // Your Public Key
+      )
 
-    setLoading(false)
+      // Save to Supabase database (backup)
+      const { error: supabaseError } = await supabase.from('contacts').insert([{
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        message: formData.message,
+      }])
 
-    if (supabaseError) {
-      console.error('Supabase error:', supabaseError)
-      setError(supabaseError.message || 'Something went wrong. Please try again.')
-    } else {
+      if (supabaseError) {
+        console.error('Supabase error:', supabaseError)
+        // Continue anyway - email was sent successfully
+      }
+
+      setLoading(false)
       setSubmitted(true)
+
       setTimeout(() => {
         setSubmitted(false)
         setFormData({ name: '', email: '', phone: '', message: '' })
       }, 3000)
+
+    } catch (error) {
+      console.error('Email sending error:', error)
+      setLoading(false)
+      setError('Failed to send message. Please try again or contact us directly.')
     }
   }
 
@@ -73,7 +95,7 @@ const ContactForm = () => {
                 </svg>
               </div>
               <h3 className="font-heading text-2xl font-bold text-primary mb-2">Thank You!</h3>
-              <p className="text-gray-600">We've received your message and will get back to you soon.</p>
+              <p className="text-gray-600">Your message has been sent successfully! We'll get back to you soon.</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-6">
