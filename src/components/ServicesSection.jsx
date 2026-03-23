@@ -16,7 +16,7 @@ const services = [
     urduTitle: 'حرارت سے بچاؤ',
     description: 'Professional thermal insulation solutions to keep your home comfortable year-round. Energy-efficient insulation for walls, roofs, and foundations.',
     urduDesc: 'پیشہ ورانہ ہیٹ انسولیشن - سال بھر آرام دہ گھر',
-    image: '/thermal-insulating.png',
+    image: 'https://i.ibb.co/3y59JLBD/thermal-insulating.png',
   },
   {
     icon: FaRuler,
@@ -32,7 +32,7 @@ const services = [
     urduTitle: 'باؤنڈری وال اور کار پورچ',
     description: 'Strong boundary walls and elegant car porches/driveways. Secure your property with durable construction and attractive entrance designs.',
     urduDesc: 'مضبوط باؤنڈری دیوار اور خوبصورت کار پورچ - محفوظ اور پرکشش',
-    image: '/wall.png',
+    image: 'https://i.ibb.co/Yx8Tzkr/wall.png',
   },
   {
     icon: FaPaintRoller,
@@ -40,7 +40,7 @@ const services = [
     urduTitle: 'پینٹ کے ساتھ چھت (پی او پی/جپسم)',
     description: 'Beautiful ceiling work with POP/Gypsum finishing and premium paint. Transform your interiors with elegant false ceiling designs.',
     urduDesc: 'پی او پی/جپسم کے ساتھ خوبصورت چھت کا کام اور پریمیم پینٹ',
-    image: '/paint-ceiling-new.png',
+    image: 'https://i.ibb.co/vvXDSRrN/paint-ceiling-new.png',
   },
   {
     icon: FaWater,
