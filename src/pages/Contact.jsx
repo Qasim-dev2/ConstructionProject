@@ -31,31 +31,25 @@ const Contact = () => {
       {/* Contact Info Cards */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 -mt-32 relative z-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 -mt-32 relative z-20">
             {[
               {
                 icon: FaPhoneAlt,
-                title: 'Call Us',
-                info: '0322-0047310',
-                link: 'tel:+923220047310',
+                title: 'WhatsApp',
+                info: '0308-6067607',
+                link: 'https://wa.me/923086067607',
               },
               {
                 icon: FaEnvelope,
-                title: 'Email Us',
-                info: 'info@reconconstruction.pk',
-                link: 'mailto:info@reconconstruction.pk',
+                title: 'Contact Email',
+                info: 'RECONPAK1@gmail.com',
+                link: 'mailto:RECONPAK1@gmail.com',
               },
               {
                 icon: FaMapMarkerAlt,
                 title: 'Visit Us',
-                info: 'Narowal, Punjab, Pakistan',
-                link: '#',
-              },
-              {
-                icon: FaClock,
-                title: 'Working Hours',
-                info: 'Mon - Sat: 8:00 AM - 5:00 PM',
-                link: null,
+                info: 'Circular Road, Narowal, Punjab, Pakistan',
+                link: 'https://maps.google.com/?q=Circular+Road,+Narowal,+Punjab,+Pakistan',
               },
             ].map((item, index) => (
               <div
@@ -78,6 +72,20 @@ const Contact = () => {
                 )}
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Working Hours */}
+      <section className="py-16 bg-light">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white rounded-2xl p-8 shadow-lg text-center max-w-md mx-auto">
+            <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <FaClock className="text-secondary" size={28} />
+            </div>
+            <h3 className="font-heading font-semibold text-xl text-primary mb-3">Working Hours</h3>
+            <p className="text-gray-600">Mon - Sat: 8:00 AM - 5:00 PM</p>
+            <p className="text-gray-600">Sunday: CLOSED</p>
           </div>
         </div>
       </section>

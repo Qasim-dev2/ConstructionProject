@@ -49,7 +49,7 @@ const About = () => {
                 </div>
                 <div className="space-y-4 pt-8">
                   <img
-                    src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=400&q=80"
+                    src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&q=80"
                     alt="Architecture"
                     className="rounded-2xl h-48 w-full object-cover shadow-lg"
                   />
@@ -150,6 +150,52 @@ const About = () => {
                 <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Leadership Messages */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <p className="text-secondary font-medium text-sm tracking-widest uppercase mb-3">
+              Leadership Vision
+            </p>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary mb-4">
+              Message From Our Leaders
+            </h2>
+            <div className="w-20 h-1 bg-secondary mx-auto rounded-full"></div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* CEO Message */}
+            <div className="bg-primary/5 rounded-2xl p-10 border-l-4 border-secondary">
+              <div className="mb-6">
+                <h3 className="font-heading text-2xl font-bold text-primary mb-2">
+                  Engr. M. Jahanzaib Iftikhar
+                </h3>
+                <p className="text-secondary font-semibold text-sm uppercase tracking-wide">CEO</p>
+              </div>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                The construction landscape is evolving rapidly, and at RECON CONSTRUCTION, we are leading that change. By embracing advanced technologies and sustainable practices, we deliver smart solutions to complex infrastructure challenges. Our goal is to 'Build a Better Future Together' by providing innovative services that exceed client expectations while positively impacting the communities we serve. I invite you to join us on this journey of growth and transformation.
+              </p>
+            </div>
+
+            {/* President Message */}
+            <div className="bg-primary/5 rounded-2xl p-10 border-l-4 border-secondary">
+              <div className="mb-6">
+                <h3 className="font-heading text-2xl font-bold text-primary mb-2">
+                  Iftikhar Ahmad Rajpoot
+                </h3>
+                <p className="text-secondary font-semibold text-sm uppercase tracking-wide">President</p>
+              </div>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                At RECON CONSTRUCTION, we don't just build structures; we build the future. In an era where the construction landscape is rapidly evolving, our mission is to lead through innovation and sustainable practices. We are committed to delivering exceptional value to our clients by integrating state-of-the-art technology with time-tested craftsmanship.
+              </p>
+              <p className="text-gray-700 leading-relaxed">
+                Our strength lies in our people—a dedicated team of architects, engineers, and specialists who share a relentless focus on excellence. Together, we are transforming challenges into landmark achievements, ensuring that every project we undertake leaves a positive, lasting impact on the communities we serve. Thank you for trusting us to bring your vision to life.
+              </p>
+            </div>
           </div>
         </div>
       </section>

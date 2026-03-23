@@ -82,25 +82,19 @@ const Footer = () => {
               <li className="flex items-start space-x-3">
                 <FaMapMarkerAlt className="text-secondary mt-1 flex-shrink-0" />
                 <span className="text-gray-400 text-sm">
-                  Narowal, Punjab, Pakistan
+                  Circular Road, Narowal, Punjab, Pakistan
                 </span>
               </li>
               <li className="flex items-center space-x-3">
                 <FaPhoneAlt className="text-secondary flex-shrink-0" />
-                <a href="tel:+923220047310" className="text-gray-400 text-sm hover:text-secondary transition-colors">
-                  0322-0047310
-                </a>
-              </li>
-              <li className="flex items-center space-x-3">
-                <FaPhoneAlt className="text-secondary flex-shrink-0" />
-                <a href="tel:+923254049735" className="text-gray-400 text-sm hover:text-secondary transition-colors">
-                  0325-4049735
+                <a href="tel:+923086067607" className="text-gray-400 text-sm hover:text-secondary transition-colors">
+                  0308-6067607
                 </a>
               </li>
               <li className="flex items-center space-x-3">
                 <FaEnvelope className="text-secondary flex-shrink-0" />
-                <a href="mailto:info@reconconstruction.pk" className="text-gray-400 text-sm hover:text-secondary transition-colors">
-                  info@reconconstruction.pk
+                <a href="mailto:RECONPAK1@gmail.com" className="text-gray-400 text-sm hover:text-secondary transition-colors">
+                  RECONPAK1@gmail.com
                 </a>
               </li>
             </ul>
@@ -109,7 +103,7 @@ const Footer = () => {
             <div className="flex space-x-3 mt-6">
               {[
                 { icon: FaFacebookF, link: '#' },
-                { icon: FaWhatsapp, link: 'https://wa.me/923220047310' },
+                { icon: FaWhatsapp, link: 'https://wa.me/923086067607' },
                 { icon: FaInstagram, link: '#' },
                 { icon: FaLinkedinIn, link: '#' },
               ].map((social, index) => (
