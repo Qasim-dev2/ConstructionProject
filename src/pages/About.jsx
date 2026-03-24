@@ -49,7 +49,7 @@ const About = () => {
                 </div>
                 <div className="space-y-4 pt-8">
                   <img
-                    src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=400&q=80"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1DEcUxmIaHNPM7NxHzW1owmAjd-UfCUx_wQ&s"
                     alt="Architecture"
                     className="rounded-2xl h-48 w-full object-cover shadow-lg"
                   />
