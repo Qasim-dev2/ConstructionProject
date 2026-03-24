@@ -174,7 +174,7 @@ const About = () => {
                 <h3 className="font-heading text-2xl font-bold text-primary mb-2">
                   Engr. M. Jahanzaib Iftikhar
                 </h3>
-                <p className="text-secondary font-semibold text-sm uppercase tracking-wide">CEO</p>
+                <p className="text-secondary font-semibold text-sm uppercase tracking-wide">CEO's Message</p>
               </div>
               <p className="text-gray-700 leading-relaxed mb-4">
                 The construction landscape is evolving rapidly, and at RECON CONSTRUCTION, we are leading that change. By embracing advanced technologies and sustainable practices, we deliver smart solutions to complex infrastructure challenges. Our goal is to 'Build a Better Future Together' by providing innovative services that exceed client expectations while positively impacting the communities we serve. I invite you to join us on this journey of growth and transformation.
@@ -187,7 +187,7 @@ const About = () => {
                 <h3 className="font-heading text-2xl font-bold text-primary mb-2">
                   Iftikhar Ahmad Rajpoot
                 </h3>
-                <p className="text-secondary font-semibold text-sm uppercase tracking-wide">President</p>
+                <p className="text-secondary font-semibold text-sm uppercase tracking-wide">President's Message</p>
               </div>
               <p className="text-gray-700 leading-relaxed mb-4">
                 At RECON CONSTRUCTION, we don't just build structures; we build the future. In an era where the construction landscape is rapidly evolving, our mission is to lead through innovation and sustainable practices. We are committed to delivering exceptional value to our clients by integrating state-of-the-art technology with time-tested craftsmanship.

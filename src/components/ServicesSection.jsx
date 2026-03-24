@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { FaBolt, FaThermometerHalf, FaRuler, FaRoad, FaPaintRoller, FaWater } from 'react-icons/fa'
+import { FaBolt, FaThermometerHalf, FaRuler, FaRoad, FaPaintRoller, FaWater, FaWind, FaTint, FaCity } from 'react-icons/fa'
 
 const services = [
   {
@@ -28,18 +28,18 @@ const services = [
   },
   {
     icon: FaRoad,
-    title: 'Boundary Wall & Car Porch/Driveway',
-    urduTitle: 'باؤنڈری وال اور کار پورچ',
-    description: 'Strong boundary walls and elegant car porches/driveways. Secure your property with durable construction and attractive entrance designs.',
-    urduDesc: 'مضبوط باؤنڈری دیوار اور خوبصورت کار پورچ - محفوظ اور پرکشش',
+    title: 'Home Construction',
+    urduTitle: 'گھر کی تعمیر',
+    description: 'Complete home construction services from foundation to finishing. Professional project management, quality materials, and expert workmanship for your dream home.',
+    urduDesc: 'مکمل گھر کی تعمیر - بنیاد سے ختم تک',
     image: 'https://i.ibb.co/Yx8Tzkr/wall.png',
   },
   {
     icon: FaPaintRoller,
-    title: 'Paint ke Sath Ceiling (POP/Gypsum)',
-    urduTitle: 'پینٹ کے ساتھ چھت (پی او پی/جپسم)',
-    description: 'Beautiful ceiling work with POP/Gypsum finishing and premium paint. Transform your interiors with elegant false ceiling designs.',
-    urduDesc: 'پی او پی/جپسم کے ساتھ خوبصورت چھت کا کام اور پریمیم پینٹ',
+    title: 'Paint/Ceiling Services',
+    urduTitle: 'پینٹ/چھت کی خدمات',
+    description: 'Professional painting and ceiling services with POP/Gypsum finishing. Transform your interiors with premium paint and elegant false ceiling designs for complete aesthetic enhancement.',
+    urduDesc: 'پیشہ ورانہ پینٹ اور چھت کی خدمات - خوبصورت اندرونی ڈیزائن',
     image: 'https://i.ibb.co/vvXDSRrN/paint-ceiling-new.png',
   },
   {
@@ -49,6 +49,30 @@ const services = [
     description: 'Professional sewerage and drainage system installation. Proper waste management and water drainage solutions for healthy living.',
     urduDesc: 'پیشہ ورانہ نکاسی آب کا نظام - صحت مند زندگی کے لیے',
     image: 'https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=600&q=80',
+  },
+  {
+    icon: FaWind,
+    title: 'Heating, Ventilation and Air Conditioning',
+    urduTitle: 'ہیٹنگ، وینٹیلیشن اور ایئر کنڈیشننگ',
+    description: 'Complete HVAC solutions for residential and commercial projects. Professional installation and maintenance of heating, cooling, and ventilation systems for optimal comfort.',
+    urduDesc: 'مکمل HVAC نظام - رہائشی اور تجارتی منصوبوں کے لیے',
+    image: 'https://miamilakes.edu/wp-content/uploads/2016/09/AC-Repiar.jpg',
+  },
+  {
+    icon: FaTint,
+    title: 'Water Supply and Gas Pipelines',
+    urduTitle: 'پانی کی فراہمی اور گیس پائپ لائن',
+    description: 'Professional water supply and gas pipeline installation. Quality piping systems with proper safety measures and durable materials for long-lasting performance.',
+    urduDesc: 'پیشہ ورانہ پانی اور گیس کی پائپ لائن - محفوظ اور پائیدار',
+    image: 'https://rehmanengg.com/wp-content/uploads/2022/12/Workers-laid-water-system-pipeline-at-construction-site.jpg',
+  },
+  {
+    icon: FaCity,
+    title: 'Roads and Streets Construction',
+    urduTitle: 'سڑکوں کی تعمیر',
+    description: 'Expert road and street construction services. Quality paving, proper drainage, and durable surfaces for residential and commercial developments.',
+    urduDesc: 'پیشہ ورانہ سڑکوں کی تعمیر - رہائشی اور تجارتی علاقوں کے لیے',
+    image: 'https://www.procore.com/library/wp-content/uploads/2024/01/Road_Work_Construction.png',
   },
 ]
 

@@ -24,8 +24,7 @@ const Hero = () => {
           <span className="block text-secondary">Construction</span>
         </h1>
         <p className="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mb-10 animate-fadeInUp" style={{ animationDelay: '0.4s' }}>
-          Building premium homes with precision, quality, and dedication across
-          Narowal, DHA, Bahria Town, and all over Punjab, Pakistan.
+          Delivering Construction and Maintenance services in public and private sectors across Punjab, Pakistan.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4 animate-fadeInUp" style={{ animationDelay: '0.6s' }}>
           <Link

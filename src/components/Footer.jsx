@@ -35,7 +35,7 @@ const Footer = () => {
           <div>
             <h4 className="font-heading font-semibold text-lg mb-6">Our Services</h4>
             <ul className="space-y-3">
-              {['Electricity', 'Heat Insulation', 'House Drawing & Estimation', 'Boundary Wall & Car Porch', 'Paint ke Sath Ceiling (POP)', 'Sewerage & Drainage'].map(
+              {['Electricity', 'Heat Insulation', 'Cad Drawing & Construction Estimation', 'Home Construction', 'Paint/Ceiling Services', 'Sewerage & Drainage', 'Heating, Ventilation and Air Conditioning', 'Water Supply and Gas Pipelines', 'Roads and Streets Construction'].map(
                 (service) => (
                   <li key={service}>
                     <Link
