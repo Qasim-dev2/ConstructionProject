@@ -24,20 +24,7 @@ const ContactForm = () => {
     setError(null)
 
     try {
-      // Send email via EmailJS
-      await emailjs.send(
-        'service_432qedq',      // Your Service ID
-        'template_0tgepae',     // Your Template ID
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          from_phone: formData.phone || 'Not provided',
-          message: formData.message,
-        },
-        'f9ErDzMnEKAjRsejA'      // Your Public Key
-      )
-
-      // Save to Supabase database (backup)
+      // Save to Supabase database FIRST (so we don't lose the message)
       const { error: supabaseError } = await supabase.from('contacts').insert([{
         name: formData.name,
         email: formData.email,
@@ -47,7 +34,27 @@ const ContactForm = () => {
 
       if (supabaseError) {
         console.error('Supabase error:', supabaseError)
-        // Continue anyway - email was sent successfully
+        throw new Error('Failed to save your message. Please try again.')
+      }
+
+      // Try to send email via EmailJS (optional - message already saved)
+      try {
+        await emailjs.send(
+          'service_432qedq',      // Your Service ID
+          'template_0tgepae',     // Your Template ID
+          {
+            from_name: formData.name,
+            from_email: formData.email,
+            from_phone: formData.phone || 'Not provided',
+            message: formData.message,
+          }
+          // Public key already initialized in main.jsx
+        )
+        console.log('Email sent successfully via EmailJS')
+      } catch (emailError) {
+        console.error('EmailJS error (message still saved):', emailError)
+        console.error('EmailJS error details:', emailError.text || emailError.message)
+        // Don't throw - message is already saved to database
       }
 
       setLoading(false)
@@ -59,9 +66,9 @@ const ContactForm = () => {
       }, 3000)
 
     } catch (error) {
-      console.error('Email sending error:', error)
+      console.error('Form submission error:', error)
       setLoading(false)
-      setError('Failed to send message. Please try again or contact us directly.')
+      setError(error.message || 'Failed to send message. Please try again or contact us directly.')
     }
   }
 
